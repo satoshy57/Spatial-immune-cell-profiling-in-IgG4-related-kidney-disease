@@ -1,2 +1,3 @@
-# Spatial-immune-cell-profiling-in-IgG4-related-kidney-disease-and-ANCA-associated-vasculitis
-Python scripts list used for the article entitled 'Spatial immune cell profiling in IgG4-related kidney disease and ANCA-associated vasculitis'
+# Spatial-immune-cells-profiling-in-IgG4-related-kidney-disease
+Python scripts list used for the article entitled 'Spatial immune cells profiling reveals disease-specific immune microenvironments in IgG4-related kidney disease'
+
