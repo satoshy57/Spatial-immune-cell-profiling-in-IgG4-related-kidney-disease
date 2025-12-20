@@ -6,6 +6,7 @@ This repository contains the computational pipeline and processed datasets for t
 ## Project Overview
 This study utilizes CODEX (Co-detection by Indexing) highly multiplexed imaging to characterize the in situ immune landscape of IgG4-RKD compared to ANCA-associated vasculitis (AAV). We employed pSAM (pseudo-spectral angle mapping) for high-granularity cell classification and spatial neighborhood analysis to identify disease-specific immune niches.
 
+
 ## Installation
 environment.yaml --contains all the packages and versions used. Use this to create a virtual environment with the appropriate packages
 
@@ -53,7 +54,7 @@ environment.yaml --contains all the packages and versions used. Use this to crea
 3-1. run_feat_extractor.py --extract the features of location of cell centroid, mean pixel intensities of CODEX marker panel
 
 
-4. batch_compactor.py  --
+4. batch_compactor.py  --integrate the data of features from each tissue into one file at dataset level 
 
 
 5. norm.sbatch
@@ -61,65 +62,77 @@ environment.yaml --contains all the packages and versions used. Use this to crea
 5-1. combat_batch_correction.py --normalization of mean pixel intensities of CODEX markers to reduce batch effect
 
 ### pSAM
-SAM_analysis_plots-general2.py
+before start: reference_spectra.csv --definition of reference spectra of membrane and nucleus classes based on CODEX marker expressions. Make sure to put this file in the directory of the dataset. Also, make sure to completely align the marker names in between Normalized_composites and reference_spectra.csv. 
 
-SAM_class_composite_display-WS.py
+1. spectral_angle_mapping.py --generate class maps
 
-add_datasetcolumn.py
+2. pixel_class_analysis2.py --calculate similarity score and generate pSAM maximum intensity projection
 
-add_patientcolumn.py
+3. match_SAM_to_nuc-WS-fast.py --assign pSAM class to segmented nuclei
 
-get_cell_MPI_csv.py
+4. get_cell_MPI_csv.py --extract mean pixel intensity (MPI) on each cell (can be skipped this step when you have already gotten it)
 
-match_SAM_to_nuc-WS-fast.py
+5. merge_class_and_MPI_csvs.py --Calculate MPIs for each classified cell
 
-merge_class_and_MPI_csvs.py
+6. add_datasetcolumn.py --add dataset column
 
-pixel_class_analysis2.py
+7. add_patientcolumn.py --add patient column
 
-reference_spectra.csv
+8. SAM_analysis_plots-general2.py --classify membrane and nucleus classes on each segmented cell and plot class information
 
-spectral_angle_mapping.py
+9. SAM_class_composite_display-WS.py --generate cell class visualizations
+
 
 ### pSAM-performance-validation
-process_MPO.sbatch
+1. pull_cells_MPI.ipynb --use MPI thresholding as a guide for pulling which cells to label
 
-process_TUBULES.sbatch
+2a. ground truthing immune cells using panel with T-bet
 
-process_images-MPO.py
+2a-1. process_images.py --preprocess ids/ strings to images for efficient ground truthing
 
-process_images.py
+2a-2. igg4_gui.py --label images using GUI
 
-process_images_MST_satoshi.py
+2a-3. write_labels.ipynb --convert manual_ground_truth.csv to labels_manual_ground_truth.csv
 
-pull_cells_MPI.ipynb
+2b. ground truthing immune cells using panel with MPO
 
-write_labels-MPO.ipynb
+2b-1. process_images-MPO.py --preprocess ids/ strings to images for efficient ground truthing
 
-write_labels-TUBULES.ipynb
+2b-2. igg4_gui-MPO_satoshi.py --label images using GUI
 
-write_labels.ipynb
+2b-3. write_labels-MPO.ipynb --convert manual_ground_truth.csv to labels_manual_ground_truth.csv
 
-igg4_gui.py
+2c. ground truthing tubular cells using panel for tubules
 
-igg4_gui-MPO_satoshi.py
+2c-1. process_images-MST_satoshi.py --preprocess ids/ strings to images for efficient ground truthing
 
-igg4_gui-TUBULES_satoshi.py
+2c-2. igg4_gui-TUBULES_satoshi.py --label images using GUI
 
-cell_annotation_analysis.py
+2c-3. write_labels-TUBULES.ipynb --convert manual_ground_truth.csv to labels_manual_ground_truth.csv
 
-usage_cell_annotation_analysis.py
+3. Comparing pSAM classification with ground-truthed cells
+
+3-1. run 'usage_cell_annotation_analysis.py'. Make sure to put the script 'cell_annotation_analysis.py' in the same directory.
 
 ### five-level-hierarchical-classification
-add_CellCatName.py
+1. add_CellCatName.py --add the column 'CellCatName'(Level(Lv1) cell classification)
 
-add_CellCatName2.py
+2. add_CellCatName2.py --add the column 'CellCatName2'(Lv3 cell classification)
 
-add_CellCatName3.py
+3. add_CellCatName3.py --add the column 'CellCatName3'(Lv2 cell classification)
 
-add_MemCatName2_column.py
+4. add_MemCatName2_column.py --add the column 'MemCatName2'(Lv4 cell classification)
 
-add_MemCatName3_column.py
+5. add_MemCatName3_column.py --add the column 'MemCatName3'(Lv5 cell classification)
+
+### structure-segmentation-analysis
+cellclass_proportion_analysis_per_structure.alldataset.py
+
+extract_structure_rows.py
+
+inflammation_masks_highqualitytiff.py
+
+structure_classification2.py
 
 ### frequency-analysis
 CD4CTL_CellCatName3_stackbar.py
