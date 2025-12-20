@@ -89,6 +89,30 @@ reference_spectra.csv
 spectral_angle_mapping.py
 
 ### pSAM-performance-validation
+process_MPO.sbatch
+
+process_TUBULES.sbatch
+
+process_images-MPO.py
+
+process_images.py
+
+process_images_MST_satoshi.py
+
+pull_cells_MPI.ipynb
+
+write_labels-MPO.ipynb
+
+write_labels-TUBULES.ipynb
+
+write_labels.ipynb
+
+igg4_gui.py
+
+igg4_gui-MPO_satoshi.py
+
+igg4_gui-TUBULES_satoshi.py
+
 cell_annotation_analysis.py
 
 usage_cell_annotation_analysis.py
@@ -158,26 +182,8 @@ dbscan2-Louvain_cellcatname3_tissuemask.py
 
 structure-segmentation-analysis
 
-## Getting Started
-Prerequisites
-
-Python 3.9+
-
-## Usage
-Cell Classification: Use 01_pSAM_classification.ipynb to process normalized CODEX marker intensities. This script implements the pseudo-spectral angle mapping algorithm to assign cells to 59 membrane and 16 nuclear classes.
-
-Spatial Analysis: Use 03_neighborhood_analysis.ipynb to identify immune niches. This script calculates cell densities and identifies unique Cellular Neighborhoods (CNs) such as CN2 (Trm-rich) and CN13 (GPNMB+ macrophage-rich).
-
-## Data Availability
-Processed Data: Available in the data/ folder of this repository.
-
-Raw Imaging Data: CODEX QPTIFF files and full datasets are deposited at Zenodo [Insert DOI Link here].
 
 ## Contact
 Satoshi Hara, MD, PhD: satoshihara@staff.kanazawa-u.ac.jp
 
 Marcus R. Clark, MD: mclark@bsd.uchicago.edu
-
-## Citation
-If you use this code or findings in your research, please cite:
-Hara, S., et al. (2026). Spatial immune cells profiling reveals disease-specific immune microenvironments in IgG4-related kidney disease. Kidney International. [DOI: XXXX/XXXX]
