@@ -6,13 +6,6 @@ This repository contains the computational pipeline and processed datasets for t
 ## Project Overview
 This study utilizes CODEX (Co-detection by Indexing) highly multiplexed imaging to characterize the in situ immune landscape of IgG4-RKD compared to ANCA-associated vasculitis (AAV). We employed pSAM (pseudo-spectral angle mapping) for high-granularity cell classification and spatial neighborhood analysis to identify disease-specific immune niches.
 
-Key Features
-pSAM Classification: Accurate cell type annotation based on membrane and nuclear protein expression profiles.
-
-Structural Segmentation: Integration of Omnipose and U-Net for kidney compartment identification.
-
-Neighborhood Analysis: Detection of cellular neighborhoods (CNs) using DBSCAN and Louvain clustering.
-
 ## Installation
 environment.yaml --contains all the packages and versions used. Use this to create a virtual environment with the appropriate packages
 
