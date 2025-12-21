@@ -1,4 +1,4 @@
-# Spatial immune profiling in IgG4-related kidney disease (IgG4-RKD) and AAV
+# Spatial immune profiling in IgG4-related kidney disease (IgG4-RKD)
 This repository contains the computational pipeline and processed datasets for the study:
 
 "Spatial immune cells profiling reveals disease-specific immune microenvironments in IgG4-related kidney disease" (Hara S, et al. 2026).
@@ -126,67 +126,72 @@ before start: reference_spectra.csv --definition of reference spectra of membran
 5. add_MemCatName3_column.py --add the column 'MemCatName3'(Lv5 cell classification)
 
 ### structure-segmentation-analysis
-cellclass_proportion_analysis_per_structure.alldataset.py
+1. structure_classification2.py --clarify which compartment of the kidney each cell is located in by using glomeruli, tubuli, and vessel masks
 
-extract_structure_rows.py
+2. extract_structure_rows.py --extract rows which include specific structure
 
-inflammation_masks_highqualitytiff.py
+3. cellclass_proportion_analysis_per_structure.alldataset.py --calculate and visualize cell type proportions per structure
 
-structure_classification2.py
+4. inflammation_masks_highqualitytiff.py --generate inflammation masks
+
 
 ### frequency-analysis
-CD4CTL_CellCatName3_stackbar.py
+1. visualization of cell types by UMAP or heatmap
 
-CD4T_CellCatName2_stackbar.py
+1-1. UMAP_pSAM.py --generate UMAP annotated by pSAM membrane classes, CODEX markers
 
-CD4Treg_CellCatName3_stackbar.py
+1-2. multipledataset_mpi_class_matrix.py --generate heatmaps which visualize Z-scored mean pixel intensities of CODEX markers per pSAM classes
 
-CD8CTL_CellCatName3_stackbar.py
+1-3. UMAP_CD4T.py --generate UMAP of CD4T cells (Lv5) annotated by CD4T cell subsets (Lv3)
 
-CD8T_CellCatName2_stackbar.py
+1-4. UMAP_CD8T.py ----generate UMAP of CD8T cells (Lv5) annotated by CD8T cell subsets (Lv3)
 
-CD8Treg_CellCatName3_stackbar.py
+1-5. UMAP_Humoral.py --generate UMAP of humoral cells (Lv5) annotated by humoral cell subsets (Lv3)
 
-Humoral_CellCatName2_stackbar.py
+1-6. UMAP_Myeloid.py --generate UMAP of myeloid cells (Lv5) annotated by myeloid cell subsets (Lv3)
 
-Myeloid_CellCatName2_stackbar.py
+1-7. UMAP_OtherLymphoid.py --generate UMAP of other lymphoid cells (Lv5) annotated by other lymphoid cell subsets (Lv3)
 
-OtherLymphoid_CellCatName2_stackbar.py
+1-8. UMAP_Stromal.py --generate UMAP of stromal cells (Lv5) annotated by stromal cell subsets (Lv3)
 
-Stromal_CellCatName2_stackbar.py
 
-Tfh_CellCatName3_stackbar.py
+2. proportion visualization by stack bars
 
-UMAP_CD4T.py
+2-1. CD4T_CellCatName2_stackbar.py --generate stack bars of CD4T cell subset (Lv3) proportions in CD4T cells (Lv5) per dataset
 
-UMAP_CD8T.py
+2-2. CD4CTL_CellCatName3_stackbar.py --generate stack bars of CD4CTL subset (Lv2) proportions in CD4CTLs (Lv3) per dataset
 
-UMAP_Humoral.py
+2-3. CD4Treg_CellCatName3_stackbar.py --generate stack bars of CD4Tregs subset (Lv2) proportions in CD4Tregs (Lv3) per dataset
 
-UMAP_Myeloid.py
+2-4. Tfh_CellCatName3_stackbar.py --generate stack bars of Tfh cell subset (Lv2) proportions in Tfh cells (Lv3) per dataset
 
-UMAP_OtherLymphoid.py
+2-5. CD8T_CellCatName2_stackbar.py --generate stack bars of CD8T cell subset (Lv3) proportions in CD8T cells (Lv5) per dataset
 
-UMAP_Stromal.py
+2-6. CD8CTL_CellCatName3_stackbar.py --generate stack bars of CD8CTL subset (Lv2) proportions in CD8CTLs (Lv3) per dataset
 
-UMAP_pSAM.py
+2-7. CD8Treg_CellCatName3_stackbar.py --generate stack bars of CD8Tregs subset (Lv2) proportions in CD8Tregs (Lv3) per dataset
 
-multipledataset_mpi_class_matrix.py
+2-8. Humoral_CellCatName2_stackbar.py --generate stack bars of humoral cell subset (Lv3) proportions in humoral cells (Lv5) per dataset
 
-proportions_densities_of_cellstates_CD4T.py
+2-9. Myeloid_CellCatName2_stackbar.py --generate stack bars of myeloid cell subset (Lv3) proportions in myeloid cell (Lv5) per dataset
 
-proportions_densities_of_cellstates_CD8T.py
+2-10. OtherLymphoid_CellCatName2_stackbar.py --generate stack bars of other lymphoid cell subset (Lv3) proportions in other lymphoid cell (Lv5) per dataset
+
+2-11. Stromal_CellCatName2_stackbar.py --generate stack bars of stromal cell subset (Lv3) proportions in stromal cell (Lv5) per dataset
+
+2-12. proportions_densities_of_cellstates_CD4T.py --generate stack bars of proportions and heatmaps of proportions and densities for functional states of CD4T cell subsets (Lv1) per dataset
+
+2-13. proportions_densities_of_cellstates_CD8T.py --generate stack bars of proportions and heatmaps of proportions and densities for functional states of CD8T cell subsets (Lv1) per dataset
+
 
 ### correlation-analysis
-Spearmann's_correlation_matrix_for_CellCatName2_tissuemask.py
+1. Spearmann's_correlation_matrix_for_CellCatName2_tissuemask.py --generate correlation heatmaps of cell proportions and densities at Lv3 cell classification 
 
-circos_plot_cellcatname3_tissuemask.py
+2. circos_plot_cellcatname3_tissuemask.py --generate circus plot of cell proportions and densities at Lv2 cell classification 
 
 
 ### spatial-analysis
-dbscan2-Louvain_cellcatname3_tissuemask.py
-
-structure-segmentation-analysis
+1. dbscan2-Louvain_cellcatname3_tissuemask.py --perform DBSCAN, followed by Louvain community detection to detect cell neighborhoods (CNs) at Lv2 cell classification. This script generates a heatmap about which cell subset is enriched in each CNs and dot plots which show each CN density across datasets.
 
 
 ## Contact
