@@ -183,6 +183,14 @@ before start: reference_spectra.csv --definition of reference spectra of membran
 
 2-13. proportions_densities_of_cellstates_CD8T.py --generate stack bars of proportions and heatmaps of proportions and densities for functional states of CD8T cell subsets (Lv1) per dataset
 
+3. frequency comparisons of cell proportions and densities among datasets and within each dataset
+
+3-1.  cell_density_proportions_withindataset_memcatname3_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv5 cell classification level
+
+3-2.  cell_density_proportions_withindataset_cellcatname2_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv3 cell classification level
+
+3-3.   cell_density_proportions_withindataset_cellcatname3_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv2 cell classification level
+
 
 ### correlation-analysis
 1. Spearmann's_correlation_matrix_for_CellCatName2_tissuemask.py --generate correlation heatmaps of cell proportions and densities at Lv3 cell classification 
