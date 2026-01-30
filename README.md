@@ -132,7 +132,9 @@ before start: reference_spectra.csv --definition of reference spectra of membran
 
 3. cellclass_proportion_analysis_per_structure.alldataset.py --calculate and visualize cell type proportions per structure
 
-4. inflammation_masks_highqualitytiff.py --generate inflammation masks
+4. cell_density_NK2normalization_alldatasets.py --generate a heatmap that shows relative contribution to total cell density change versus kidney control
+
+5. inflammation_masks_highqualitytiff.py --generate inflammation masks
 
 
 ### frequency-analysis
