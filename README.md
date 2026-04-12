@@ -6,7 +6,6 @@ This repository contains the computational pipeline and processed datasets for t
 ## Project Overview
 This study utilizes CODEX (Co-detection by Indexing) highly multiplexed imaging to characterize the in situ immune landscape of IgG4-RKD compared to ANCA-associated vasculitis (AAV). We employed pSAM (pseudo-spectral angle mapping) for high-granularity cell classification and spatial neighborhood analysis to identify disease-specific immune niches.
 
-
 ## Installation
 environment.yaml --contains all the packages and versions used. Use this to create a virtual environment with the appropriate packages
 
@@ -203,6 +202,11 @@ before start: reference_spectra.csv --definition of reference spectra of membran
 ### spatial-analysis
 1. dbscan2-Louvain_cellcatname3_tissuemask.py --perform DBSCAN, followed by Louvain community detection to detect cell neighborhoods (CNs) at Lv2 cell classification. This script generates a heatmap about which cell subset is enriched in each CNs and dot plots which show each CN density across datasets.
 
+## Important Notice: Hard-Coded File Paths
+All scripts in this repository contain hard-coded file paths that were configured for the authors' local computational environment. Before running any script, you must manually update the relevant path variables to match your own directory structure.
+
+### Data Availability
+The datasets used in this study are available from the corresponding author upon reasonable request.
 
 ## Contact
 Satoshi Hara, MD, PhD: satoshihara@staff.kanazawa-u.ac.jp
