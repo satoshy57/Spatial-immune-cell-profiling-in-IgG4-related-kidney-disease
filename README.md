@@ -1,7 +1,7 @@
-# Spatial immune profiling in IgG4-related kidney disease (IgG4-RKD)
+# Spatial immune profiling in IgG4-related tubulointerstitial nephritis (IgG4-TIN)
 This repository contains the computational pipeline and processed datasets for the study:
 
-"Spatial immune cells profiling reveals disease-specific immune microenvironments in IgG4-related kidney disease" (Hara S, et al. 2026).
+"Complex spatial immune cell architectures in IgG4-related tubulointerstitial nephritis" (Hara S, et al. 2026).
 
 ## Project Overview
 This study utilizes CODEX (Co-detection by Indexing) highly multiplexed imaging to characterize the in situ immune landscape of IgG4-RKD compared to ANCA-associated vasculitis (AAV). We employed pSAM (pseudo-spectral angle mapping) for high-granularity cell classification and spatial neighborhood analysis to identify disease-specific immune niches.
