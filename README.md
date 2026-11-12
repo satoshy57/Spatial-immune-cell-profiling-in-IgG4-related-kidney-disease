@@ -137,60 +137,66 @@ before start: reference_spectra.csv --definition of reference spectra of membran
 
 
 ### frequency-analysis
-1. visualization of cell types by UMAP or heatmap
+1. cell counts
 
-1-1. UMAP_pSAM.py --generate UMAP annotated by pSAM membrane classes, CODEX markers
+1-1. cell_counts_alllevels_perpatient
 
-1-2. multipledataset_mpi_class_matrix.py --generate heatmaps which visualize Z-scored mean pixel intensities of CODEX markers per pSAM classes
+1-2. cell_counts_immune_table.py --counts immune-cell number
 
-1-3. UMAP_CD4T.py --generate UMAP of CD4T cells (Lv5) annotated by CD4T cell subsets (Lv3)
+2. visualization of cell types by UMAP or heatmap
 
-1-4. UMAP_CD8T.py ----generate UMAP of CD8T cells (Lv5) annotated by CD8T cell subsets (Lv3)
+2-1. UMAP_pSAM.py --generate UMAP annotated by pSAM membrane classes, CODEX markers
 
-1-5. UMAP_Humoral.py --generate UMAP of humoral cells (Lv5) annotated by humoral cell subsets (Lv3)
+2-2. multipledataset_mpi_class_matrix.py --generate heatmaps which visualize Z-scored mean pixel intensities of CODEX markers per pSAM classes
 
-1-6. UMAP_Myeloid.py --generate UMAP of myeloid cells (Lv5) annotated by myeloid cell subsets (Lv3)
+2-3. UMAP_CD4T.py --generate UMAP of CD4T cells (Lv5) annotated by CD4T cell subsets (Lv3)
 
-1-7. UMAP_OtherLymphoid.py --generate UMAP of other lymphoid cells (Lv5) annotated by other lymphoid cell subsets (Lv3)
+2-4. UMAP_CD8T.py ----generate UMAP of CD8T cells (Lv5) annotated by CD8T cell subsets (Lv3)
 
-1-8. UMAP_Stromal.py --generate UMAP of stromal cells (Lv5) annotated by stromal cell subsets (Lv3)
+2-5. UMAP_Humoral.py --generate UMAP of humoral cells (Lv5) annotated by humoral cell subsets (Lv3)
+
+2-6. UMAP_Myeloid.py --generate UMAP of myeloid cells (Lv5) annotated by myeloid cell subsets (Lv3)
+
+2-7. UMAP_OtherLymphoid.py --generate UMAP of other lymphoid cells (Lv5) annotated by other lymphoid cell subsets (Lv3)
+
+2-8. UMAP_Stromal.py --generate UMAP of stromal cells (Lv5) annotated by stromal cell subsets (Lv3)
 
 
-2. proportion visualization by stack bars
+3. proportion visualization by stack bars
 
-2-1. CD4T_CellCatName2_stackbar.py --generate stack bars of CD4T cell subset (Lv3) proportions in CD4T cells (Lv5) per dataset
+3-1. CD4T_CellCatName2_stackbar.py --generate stack bars of CD4T cell subset (Lv3) proportions in CD4T cells (Lv5) per dataset
 
-2-2. CD4CTL_CellCatName3_stackbar.py --generate stack bars of CD4CTL subset (Lv2) proportions in CD4CTLs (Lv3) per dataset
+3-2. CD4CTL_CellCatName3_stackbar.py --generate stack bars of CD4CTL subset (Lv2) proportions in CD4CTLs (Lv3) per dataset
 
-2-3. CD4Treg_CellCatName3_stackbar.py --generate stack bars of CD4Tregs subset (Lv2) proportions in CD4Tregs (Lv3) per dataset
+3-3. CD4Treg_CellCatName3_stackbar.py --generate stack bars of CD4Tregs subset (Lv2) proportions in CD4Tregs (Lv3) per dataset
 
-2-4. Tfh_CellCatName3_stackbar.py --generate stack bars of Tfh cell subset (Lv2) proportions in Tfh cells (Lv3) per dataset
+3-4. Tfh_CellCatName3_stackbar.py --generate stack bars of Tfh cell subset (Lv2) proportions in Tfh cells (Lv3) per dataset
 
-2-5. CD8T_CellCatName2_stackbar.py --generate stack bars of CD8T cell subset (Lv3) proportions in CD8T cells (Lv5) per dataset
+3-5. CD8T_CellCatName2_stackbar.py --generate stack bars of CD8T cell subset (Lv3) proportions in CD8T cells (Lv5) per dataset
 
-2-6. CD8CTL_CellCatName3_stackbar.py --generate stack bars of CD8CTL subset (Lv2) proportions in CD8CTLs (Lv3) per dataset
+3-6. CD8CTL_CellCatName3_stackbar.py --generate stack bars of CD8CTL subset (Lv2) proportions in CD8CTLs (Lv3) per dataset
 
-2-7. CD8Treg_CellCatName3_stackbar.py --generate stack bars of CD8Tregs subset (Lv2) proportions in CD8Tregs (Lv3) per dataset
+3-7. CD8Treg_CellCatName3_stackbar.py --generate stack bars of CD8Tregs subset (Lv2) proportions in CD8Tregs (Lv3) per dataset
 
-2-8. Humoral_CellCatName2_stackbar.py --generate stack bars of humoral cell subset (Lv3) proportions in humoral cells (Lv5) per dataset
+3-8. Humoral_CellCatName2_stackbar.py --generate stack bars of humoral cell subset (Lv3) proportions in humoral cells (Lv5) per dataset
 
-2-9. Myeloid_CellCatName2_stackbar.py --generate stack bars of myeloid cell subset (Lv3) proportions in myeloid cell (Lv5) per dataset
+3-9. Myeloid_CellCatName2_stackbar.py --generate stack bars of myeloid cell subset (Lv3) proportions in myeloid cell (Lv5) per dataset
 
-2-10. OtherLymphoid_CellCatName2_stackbar.py --generate stack bars of other lymphoid cell subset (Lv3) proportions in other lymphoid cell (Lv5) per dataset
+3-10. OtherLymphoid_CellCatName2_stackbar.py --generate stack bars of other lymphoid cell subset (Lv3) proportions in other lymphoid cell (Lv5) per dataset
 
-2-11. Stromal_CellCatName2_stackbar.py --generate stack bars of stromal cell subset (Lv3) proportions in stromal cell (Lv5) per dataset
+3-11. Stromal_CellCatName2_stackbar.py --generate stack bars of stromal cell subset (Lv3) proportions in stromal cell (Lv5) per dataset
 
-2-12. proportions_densities_of_cellstates_CD4T.py --generate stack bars of proportions and heatmaps of proportions and densities for functional states of CD4T cell subsets (Lv1) per dataset
+3-12. proportions_densities_of_cellstates_CD4T.py --generate stack bars of proportions and heatmaps of proportions and densities for functional states of CD4T cell subsets (Lv1) per dataset
 
-2-13. proportions_densities_of_cellstates_CD8T.py --generate stack bars of proportions and heatmaps of proportions and densities for functional states of CD8T cell subsets (Lv1) per dataset
+3-13. proportions_densities_of_cellstates_CD8T.py --generate stack bars of proportions and heatmaps of proportions and densities for functional states of CD8T cell subsets (Lv1) per dataset
 
-3. frequency comparisons of cell proportions and densities among datasets and within each dataset
+4. frequency comparisons of cell proportions and densities among datasets and within each dataset
 
-3-1.  cell_density_proportions_withindataset_memcatname3_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv5 cell classification level
+4-1.  cell_density_proportions_withindataset_memcatname3_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv5 cell classification level
 
-3-2.  cell_density_proportions_withindataset_cellcatname2_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv3 cell classification level
+4-2.  cell_density_proportions_withindataset_cellcatname2_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv3 cell classification level
 
-3-3.   cell_density_proportions_withindataset_cellcatname3_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv2 cell classification level
+4-3.   cell_density_proportions_withindataset_cellcatname3_inflammationmask_scatterplot.py --perform frequency comparison of cell proportions and densities among datasets and within each dataset at Lv2 cell classification level
 
 
 ### correlation-analysis
