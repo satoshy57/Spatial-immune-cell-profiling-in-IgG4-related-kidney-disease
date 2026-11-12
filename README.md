@@ -139,7 +139,7 @@ before start: reference_spectra.csv --definition of reference spectra of membran
 ### frequency-analysis
 1. cell counts
 
-1-1. cell_counts_alllevels_perpatient
+1-1. cell_counts_alllevels_perpatient.py --counts cells in all levels of cell classification per patient
 
 1-2. cell_counts_immune_table.py --counts immune-cell number
 
